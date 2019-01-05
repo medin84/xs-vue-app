@@ -1,0 +1,33 @@
+<nav v-if="auth.isAuthenticated" class="navbar-nav">
+  <div class="nav-item" v-if="auth.user.displayMailLink">
+    <a class="nav-link" :href="auth.user.mailLink" target="_blank">
+      {{'post'}}
+    </a>
+  </div>
+  <div class="nav-item dropdown to-left">
+    <button class="dropdown-toggle no-arrow user-menu">
+      <span class="icon-user"><i class="fa fa-user"></i></span>
+      <span class="navbar-user-name">{{auth.user.name}}</span>
+    </button>
+    <div class="dropdown-menu">
+      <ul class="list user-menu-list">
+        <li>
+          <router-link class="list__item user-profile" :to="{name:'UserProfile'}">
+            <i class="list__item_icon fa fa-user-circle-o"></i>
+            <div class="list__item_content">
+              {{'your_profile'}}
+              <div class="text-muted">{{auth.user.name}}</div>
+            </div>
+          </router-link>
+        </li>
+        <li class="list__item_divider"></li>
+        <li>
+          <a class="list__item ws" href="#" @click.prevent="logout">
+            <i class="list__item_icon fa fa-sign-out"></i>
+            <div class="list__item_content">{{'logout'}}</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

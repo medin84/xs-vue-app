@@ -1,0 +1,19 @@
+<ul v-if="items">
+  <li v-for="item in items" :key="item.id" :class="itemClass(item)">
+    <router-link v-if="item.url" class="nav-link" exact-active-class="active"
+        active-class="is-active" :to="{ path:'/views', query:{v:item.url} }">
+      <i class="side-tree-toggle fa"
+        :class="item.children && item.children.length ? '' : 'side-tree-toggle_holder'"
+        @click.prevent="toggleCollapsible(item)"></i>
+      <!-- <i class="nav-icon" :class="item.icon ? item.icon : 'fa fa-file-o'"></i> -->
+      <span class="nav-text">{{item.caption}}</span>
+    </router-link>
+    <a v-else href="#" class="nav-header nav-link" @click.prevent="toggleCollapsible(item)">
+      <i class="side-tree-toggle fa"
+        :class="item.children && item.children.length ? '' : 'side-tree-toggle_holder'"></i>
+      <!-- <i class="nav-icon" :class="item.icon ? item.icon : 'fa fa-file-o'"></i> -->
+      <span class="nav-text">{{item.caption}}</span>
+    </a>
+    <xpage-nav v-if="item.children && item.children.length" :root="false" :items="item.children" />
+  </li>
+</ul>

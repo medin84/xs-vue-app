@@ -1,0 +1,33 @@
+<div class="sign-in-page-container">
+  <h2 class="sign-in-page-title">{{ui.orgName}}</h2>
+  <form class="sign-in-form" @submit.prevent="onSubmit">
+    <div class="sign-in-form-row">
+      <div class="sign-in-form-row__label">Пользователь</div>
+      <div class="sign-in-form-row__field">
+        <input name="login" v-model="login" required autofocus>
+      </div>
+    </div>
+    <div class="sign-in-form-row">
+      <div class="sign-in-form-row__label">Пароль</div>
+      <div class="sign-in-form-row__field">
+        <input type="password" name="pwd" v-model="pwd" required>
+      </div>
+    </div>
+    <div class="sign-in-form-action">
+      <label>
+        <input type="checkbox" name="saveauth" v-model="saveauth" value="1">
+        <span>запомнить</span>
+      </label>
+      <button type="submit" class="btn sign-in-btn-submit">Войти</button>
+    </div>
+    <div class="sign-in-client-logo-wrapper">
+      <img class="sign-in-client-logo" :src="ui.logo" alt="logo">
+    </div>
+  </form>
+  <div class="copy hidden">
+    <a href="" target="_blank" rel="noopener noreferrer">LOF</a>
+  </div>
+  <div class="xsmart-logo">
+    <a href="" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+</div>

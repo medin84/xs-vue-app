@@ -1,0 +1,14 @@
+<header class="navbar">
+  <div class="navbar__container container">
+    <div class="navbar-brand">
+      <button class="btn-sidenav__toggle" type="button" v-if="ui.sidenav.gamburger"
+        @click="toggleSidenav()"></button>
+      <img class="brand-logo" :src="ui.logo" v-if="ui.logo" />
+      <div class="brand-title" v-if="ui.title || ui.orgName">
+        {{ui.title}}
+        <span class="brand-sub-title" v-if="ui.orgName">{{ui.orgName}}</span>
+      </div>
+    </div>
+    <xpage-navbar-user-menu />
+  </div>
+</header>

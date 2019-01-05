@@ -1,0 +1,16 @@
+<div class="app-root layout is-ready" :class="layoutClassList">
+  <div class="layout__container">
+    <xpage-navbar />
+    <div class="navbar__spacer"></div>
+    <section class="main">
+      <div class="main__container container">
+        <xpage-sidenav />
+        <main class="content">
+          <div class="content__container">
+            <router-view />
+          </div>
+        </main>
+      </div>
+    </section>
+  </div>
+</div>

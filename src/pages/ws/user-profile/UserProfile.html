@@ -1,0 +1,78 @@
+<form class="form">
+  <div class="content-actions">
+    <button class="btn btn-default" @click.prevent="goBack" type="button">
+      Close
+    </button>
+    <button class="btn btn-primary" onclick="saveUserProfile(this)" type="button">
+      Save & close
+    </button>
+  </div>
+  <header class="content-header">
+    <h1 class="header-title">
+      <div class="title">Profile / {{user.name}}</div>
+    </h1>
+  </header>
+  <div class="content-body">
+    <div class="fieldset">
+      <div class="legend">Свойства</div>
+      <div class="form-group">
+        <div class="control-label">
+          department
+        </div>
+        <div class="controls">
+          <span class="input-placeholder">{department}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label">
+          post
+        </div>
+        <div class="controls">
+          <span class="input-placeholder">{post}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label">
+          fullname
+        </div>
+        <div class="controls">
+          <span class="input-placeholder">{fullname}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label">Notes Name</div>
+        <div class="controls">
+          <span class="input-placeholder">{notesname}</span>
+        </div>
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="legend">Интерфейс</div>
+      <div class="form-group">
+        <div class="control-label">
+          countdocinview
+        </div>
+        <div class="controls">
+          <select name="pagesize" class="span2">
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label">
+          lang
+        </div>
+        <div class="controls">
+          <select name="lang" class="span2">
+            <option :value="lang" v-for="lang in langs" :key="lang">
+              {{lang}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
